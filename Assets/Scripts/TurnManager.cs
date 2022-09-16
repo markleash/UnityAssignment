@@ -8,6 +8,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private PlayerTurn playerOne;
     [SerializeField] private PlayerTurn playerTwo;
     [SerializeField] private float timeBetweenTurns;
+   // private GameManager gm;
     
     private int currentPlayerIndex;
     private bool waitingForNextTurn;
@@ -21,7 +22,10 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 1;
             playerOne.SetPlayerTurn(1);
             playerTwo.SetPlayerTurn(2);
+           // gm = transform.GetComponent<GameManager>();
+            // make the first camera be the one who's awake at first
         }
+
     }
 
     private void Update() 
@@ -69,5 +73,7 @@ public class TurnManager : MonoBehaviour
         {
             currentPlayerIndex = 1;
         }
+
+        //gm.ChangeTurn();
     }
 }
