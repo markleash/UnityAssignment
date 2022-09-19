@@ -7,10 +7,12 @@ public class TurnManager : MonoBehaviour
     private static TurnManager instance;
     [SerializeField] private PlayerTurn playerOne;
     [SerializeField] private PlayerTurn playerTwo;
+    //[SerializeField] private gameObject camera1;
+    // [SerializeField] private PlayerTurn playerTwo; CAMERA2
     [SerializeField] private float timeBetweenTurns;
    // private GameManager gm;
     
-    private int currentPlayerIndex;
+    public static int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
 
@@ -62,11 +64,12 @@ public class TurnManager : MonoBehaviour
         waitingForNextTurn = true;
     }
 
-    public void ChangeTurn()
+    public static void ChangeTurn()
     {
         if (currentPlayerIndex == 1)
         {
             currentPlayerIndex = 2;
+           // camera1.GameObject(SetActive) = false;
         }
 
         else if (currentPlayerIndex == 2)
