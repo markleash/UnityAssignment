@@ -14,6 +14,5 @@ public class PlayerTurn : MonoBehaviour
     public bool IsPlayerTurn()
     {
         return TurnManager.GetInstance().IsItPlayerTurn(playerIndex);
-        Debug.Log ("HELLO" + playerIndex);
     }
 }

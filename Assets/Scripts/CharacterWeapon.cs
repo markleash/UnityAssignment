@@ -7,6 +7,7 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
+    [SerializeField] private LineRenderer lineRenderer;
     //[SerializeField] private CharacterController newWeaponPosition;
 
 

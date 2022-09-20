@@ -12,16 +12,17 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        this.GetComponent<CharacterWeapon>().enabled = true;
         if (playerTurn.IsPlayerTurn())
         {
             if (Input.GetAxis("Horizontal") != 0)
             {
-                transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"));
+                transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"), Space.World);
             }
 
             if (Input.GetAxis("Vertical") != 0)
             {
-                transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
+                transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
             }
 
             if (Input.GetKey(KeyCode.E)) 
@@ -46,6 +47,8 @@ public class CharacterController : MonoBehaviour
         {
             this.GetComponent<CharacterWeapon>().enabled = false;
         }
+
+        Cursor.visible = false;
     }
 
     private void Jump()

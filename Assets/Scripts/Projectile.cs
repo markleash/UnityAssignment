@@ -40,8 +40,14 @@ public class Projectile : MonoBehaviour
         DestructionFree destruction = collisionObject.GetComponent<DestructionFree>();
         if (destruction == null)
         {
-            Destroy(collisionObject);   
+            // Destroy(collisionObject);   
             Destroy(gameObject);
+        }
+
+        if (collisionObject.tag == "Player")
+        {
+            collisionObject.GetComponent<PlayerHealth>().TakeDamage(20);
+            // GetComponent<PlayerHealth>().TakeDamage(20);
         }
         
     }
