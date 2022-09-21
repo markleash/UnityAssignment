@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PowerPickup : MonoBehaviour
 {
-    [SerializeField] private int powerAmount = 16;
+    [SerializeField] public int powerAmount = 16;
+    public int pickedUpAmount;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -12,7 +13,8 @@ public class PowerPickup : MonoBehaviour
         
         if (other.gameObject.tag == "Player")
         {
-            collisionObject.GetComponent<PlayerHealth>().IncreaseHealth(powerAmount);
+            
+            pickedUpAmount++;
             Destroy(gameObject);
         }
     }

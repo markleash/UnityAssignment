@@ -11,7 +11,7 @@ public class HealthPickup : MonoBehaviour
    {
       GameObject collisionObject = collision.gameObject ;
       
-      if (collision.gameObject.tag == "Player")
+      if (collision.gameObject.tag == "Player" && collisionObject.GetComponent<PlayerHealth>().currentHealth < 100)
       {
          collisionObject.GetComponent<PlayerHealth>().IncreaseHealth(healthAmount);
          Destroy(gameObject);

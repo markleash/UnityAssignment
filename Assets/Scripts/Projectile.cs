@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    //[SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private int projectileDamage = 20;
+    private PowerPickup powerPickup;
     private bool isActive;
     
     public void Initialize()
@@ -24,7 +25,7 @@ public class Projectile : MonoBehaviour
         {
             // -------- This method is for projectiles that go in a straight line. ----------
             // We change the position every frame
-            // Make sure to have "useGravity" toggled off in the rigid body, otherwise it will fall as it flies (unless thats what you want)
+            // Make sure to have "useGravity" toggled off in the rigid body, otherwise it will fall as it flies (unless that's what you want)
 
             // Use either the following line (movement with the rigid body)
             //projectileBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
@@ -47,8 +48,20 @@ public class Projectile : MonoBehaviour
 
         if (collisionObject.tag == "Player")
         {
-            collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
-            // GetComponent<PlayerHealth>().TakeDamage(20);
+            int numberOfPickups = powerPickup.pickedUpAmount;
+            int powerPickupDamage = powerPickup.powerAmount;
+            
+            if (powerPickup.pickedUpAmount == 0)
+            {
+                collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
+            }
+
+            else
+            {
+                collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage + (numberOfPickups * powerPickupDamage));    
+            }
+            
+            
         }
         
     }

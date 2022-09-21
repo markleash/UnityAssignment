@@ -15,6 +15,7 @@ public class TurnManager : MonoBehaviour
     public static int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
+    private static Timer timer;
 
     private void Awake() 
     {
