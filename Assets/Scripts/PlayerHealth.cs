@@ -33,4 +33,15 @@ public class PlayerHealth : MonoBehaviour
 
 		healthBar.SetHealth(currentHealth);
 	}
+
+	public void IncreaseHealth(int pickupHealth)
+	{
+		currentHealth += pickupHealth;
+		if (currentHealth >= 100)
+		{
+			currentHealth = 100;
+		}
+		healthBar.SetHealth(currentHealth);
+		
+	}
 }

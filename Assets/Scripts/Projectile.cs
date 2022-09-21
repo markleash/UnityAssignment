@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
+    [SerializeField] private int projectileDamage = 20;
     private bool isActive;
     
     public void Initialize()
@@ -46,7 +47,7 @@ public class Projectile : MonoBehaviour
 
         if (collisionObject.tag == "Player")
         {
-            collisionObject.GetComponent<PlayerHealth>().TakeDamage(20);
+            collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
             // GetComponent<PlayerHealth>().TakeDamage(20);
         }
         
