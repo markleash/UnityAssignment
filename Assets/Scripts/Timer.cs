@@ -18,21 +18,13 @@ public class Timer : MonoBehaviour
         {
             timeValue -= Time.deltaTime;
             
-
         }
 
         else
         {
             TurnManager.GetInstance().TriggerChangeTurn();
         }
-
-        // I KNOW THIS IS WRONG BUT IT JUST WORKS SORRY THX
-       /* if (Input.GetKeyDown(KeyCode.V))
-        {
-            TimeResetter();
-        }
-        */
-       DisplayTime(timeValue);
+        DisplayTime(timeValue);
     }
 
     public void TimeResetter()
@@ -47,7 +39,6 @@ public class Timer : MonoBehaviour
         }
         
         timeText.text = timeToDisplay.ToString("##");
-        
 
     }
 }
