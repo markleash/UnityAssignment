@@ -7,16 +7,22 @@ public class Projectile : MonoBehaviour
     //[SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private int projectileDamage = 20;
-    private PowerPickup powerPickup;
+    private int powerPickup;
     private bool isActive;
+    private int powerPickupDamage;
     
-    public void Initialize()
+    public void Initialize(int pickupAmount, int pickupDamage)
     {
+        
         isActive = true;
         // -------- This method is for projectiles that have a parabole. ----------
         // We add a force only once, not every frame
         // Make sure to have "useGravity" toggled on in the rigid body
         projectileBody.AddForce(transform.forward * 700f + transform.up * 300f);
+        powerPickup = pickupAmount;
+        powerPickupDamage = pickupDamage;
+
+
     }
     
     void Update()
@@ -48,17 +54,15 @@ public class Projectile : MonoBehaviour
 
         if (collisionObject.tag == "Player")
         {
-            int numberOfPickups = powerPickup.pickedUpAmount;
-            int powerPickupDamage = powerPickup.powerAmount;
             
-            if (powerPickup.pickedUpAmount == 0)
+            if (powerPickup == 0)
             {
                 collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
             }
 
             else
             {
-                collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage + (numberOfPickups * powerPickupDamage));    
+                collisionObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage + (powerPickup * powerPickupDamage));    
             }
             
             

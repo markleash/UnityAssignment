@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
     [SerializeField] private LineRenderer lineRenderer;
-
+    [SerializeField] private int damage;
+    private int pickupAmount;
     
     //[SerializeField] private CharacterController newWeaponPosition;
 
@@ -27,10 +29,21 @@ public class CharacterWeapon : MonoBehaviour
                 GameObject newProjectile = Instantiate(projectilePrefab);
                 newProjectile.transform.position = shootingStartPosition.position;
                 newProjectile.transform.rotation = shootingStartPosition.rotation;
-                newProjectile.GetComponent<Projectile>().Initialize();
+                newProjectile.GetComponent<Projectile>().Initialize(pickupAmount, damage);
+                
                 //GetComponent<Animator>().SetTrigger("attack");
                 //GetComponent<Animator>().SetTrigger("idle");
             }
+            
         }
     }
+
+    public void IncreasePickup()
+    {
+        pickupAmount++;
+    }
+
+
 }
+
+

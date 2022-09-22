@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float timeValue = 45;
-    public float resetTimeValue = 45;
+    public float resetTimeValue = 47;
     public TextMeshProUGUI timeText;
     private float decimalTimeValue;
     
@@ -23,13 +23,22 @@ public class Timer : MonoBehaviour
 
         else
         {
-            timeValue = resetTimeValue;
             TurnManager.GetInstance().TriggerChangeTurn();
         }
-        
-        DisplayTime(timeValue);
+
+        // I KNOW THIS IS WRONG BUT IT JUST WORKS SORRY THX
+       /* if (Input.GetKeyDown(KeyCode.V))
+        {
+            TimeResetter();
+        }
+        */
+       DisplayTime(timeValue);
     }
 
+    public void TimeResetter()
+    {
+        timeValue = resetTimeValue;
+    }
     void DisplayTime(float timeToDisplay)
     {
         if (timeToDisplay < 0)

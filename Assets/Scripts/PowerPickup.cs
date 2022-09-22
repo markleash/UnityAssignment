@@ -14,7 +14,7 @@ public class PowerPickup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             
-            pickedUpAmount++;
+            collisionObject.GetComponent<CharacterWeapon>().IncreasePickup();
             Destroy(gameObject);
         }
     }

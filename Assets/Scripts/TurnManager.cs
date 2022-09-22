@@ -10,12 +10,13 @@ public class TurnManager : MonoBehaviour
     //[SerializeField] private gameObject camera1;
     // [SerializeField] private PlayerTurn playerTwo; CAMERA2
     [SerializeField] private float timeBetweenTurns;
+    [SerializeField] private GameObject timerGO;
    // private GameManager gm;
     
     public static int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
-    private static Timer timer;
+    //private Timer timer;
 
     private void Awake() 
     {
@@ -41,6 +42,7 @@ public class TurnManager : MonoBehaviour
                 turnDelay = 0;
                 waitingForNextTurn = false;
                 ChangeTurn();
+                
             }
         }    
     }
@@ -63,6 +65,8 @@ public class TurnManager : MonoBehaviour
     public void TriggerChangeTurn()
     {
         waitingForNextTurn = true;
+        timerGO.GetComponent<Timer>().TimeResetter();
+        
     }
 
     public static void ChangeTurn()
@@ -70,6 +74,7 @@ public class TurnManager : MonoBehaviour
         if (currentPlayerIndex == 1)
         {
             currentPlayerIndex = 2;
+            
            // camera1.GameObject(SetActive) = false;
         }
 
@@ -78,6 +83,7 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 1;
         }
 
+        
         //gm.ChangeTurn();
     }
 }
