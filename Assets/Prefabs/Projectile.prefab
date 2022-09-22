@@ -4833,7 +4833,7 @@ GameObject:
   - component: {fileID: 8015076327009393375}
   - component: {fileID: 4477921603288730388}
   m_Layer: 0
-  m_Name: Smoke (1)
+  m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5105,9 +5105,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0.1
-      minScalar: 1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5158,7 +5158,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5211,7 +5211,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5429,7 +5429,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5481,9 +5481,9 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 0
+    enabled: 1
     type: 4
-    angle: 25
+    angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -5569,7 +5569,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.13
       mode: 0
       spread: 0
       speed:
@@ -19224,7 +19224,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31f99f61763ec4f4689fb113e1a5bef8, type: 2}
+  - {fileID: 2100000, guid: 8e068c853fb127444a570b994b9aaf6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24228,6 +24228,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6852001070ea189479ae1fc561441bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   projectileBody: {fileID: 3409477788478703934}
   projectileDamage: 20
