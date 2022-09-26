@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timeValue = 45;
-    public float resetTimeValue = 47;
+    public static float timeValue = 17;
+    public float resetTimeValue = 20;
     public TextMeshProUGUI timeText;
     private float decimalTimeValue;
     

@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4715320825850062726}
   - component: {fileID: 3873941228698197646}
   - component: {fileID: 1500672949842464279}
+  - component: {fileID: 496558146378794085}
   m_Layer: 0
   m_Name: Time Pickup
   m_TagString: Untagged
@@ -244,6 +245,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.52, z: 0}
+--- !u!114 &496558146378794085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922605640247116572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe7ee11175a4afb892c504369952775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7739106206255586477
 GameObject:
   m_ObjectHideFlags: 0

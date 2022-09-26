@@ -13,7 +13,7 @@ public class PickupManager : MonoBehaviour
     [SerializeField] private float pickupSpawnTime = 5f;
     //[SerializeField] private float pickupSpawnTimeResetter = 5f;
     private float timeElapsed;
-    private float timeResetter = 5f;
+    private float timeResetter = 3f;
 
     /*private void Awake()
     {
@@ -48,7 +48,7 @@ public class PickupManager : MonoBehaviour
             //yield return new WaitForSeconds(5);
             int randomIndex = Random.Range(0, pickups.Length);
             GameObject newPickup = Instantiate(pickups[randomIndex]);
-            newPickup.transform.position = new Vector3(Random.Range(7f,-25f), 20f, Random.Range(-9f, 26f));
+            newPickup.transform.position = new Vector3(Random.Range(1f,-16f), 10f, Random.Range(0f, 90f));
     }
 }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Animations : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private PlayerTurn playerTurn;
+    [SerializeField] private Timer timer;
     void Update()
     {
         bool isShooting = Input.GetKeyDown(KeyCode.V); 
@@ -27,5 +29,6 @@ public class Animations : MonoBehaviour
         {
             animator.SetBool("Idle", true);
         }
+        
     }
 }

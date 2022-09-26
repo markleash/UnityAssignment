@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Rigidbody characterBody;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float rotateSpeed = 45f;
+    private Animator animator;
     private CharacterWeapon characterWeapon;
 
     void Update()
@@ -15,6 +16,8 @@ public class CharacterController : MonoBehaviour
         this.GetComponent<CharacterWeapon>().enabled = true;
         if (playerTurn.IsPlayerTurn())
         {
+            this.GetComponent<Animations>().enabled = true;
+
             if (Input.GetAxis("Horizontal") != 0)
             {
                 transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"), Space.World);
@@ -40,21 +43,33 @@ public class CharacterController : MonoBehaviour
                 Jump();
             }
 
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                FlyDown();
+            }
+
             
         }
 
         else
         {
             this.GetComponent<CharacterWeapon>().enabled = false;
+            //this.animator.SetBool("Idle", true);
+            this.GetComponent<Animations>().enabled = false;
         }
 
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     private void Jump()
     {
         //characterBody.velocity = Vector3.up * 10f;
-        characterBody.AddForce(Vector3.up * 500f);
+        characterBody.AddForce(Vector3.up * 700f);
+    }
+
+    private void FlyDown()
+    {
+        characterBody.AddForce((Vector3.down * 500f));
     }
 
     private bool IsTouchingFloor()
