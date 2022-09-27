@@ -7,14 +7,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] public GameObject turnManager;
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("PostPrototype");
         Cursor.visible = false;
 
     }
     
     public void HowToPlay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("HTP");
         Cursor.visible = true;
     }
 

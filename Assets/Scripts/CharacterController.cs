@@ -38,12 +38,12 @@ public class CharacterController : MonoBehaviour
                 transform.Rotate(-Vector3.up * rotateSpeed * Time.deltaTime);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
+            if (Input.GetKey(KeyCode.Space) && IsTouchingFloor())
             {
                 Jump();
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKey(KeyCode.LeftControl))
             {
                 FlyDown();
             }
@@ -64,12 +64,12 @@ public class CharacterController : MonoBehaviour
     private void Jump()
     {
         //characterBody.velocity = Vector3.up * 10f;
-        characterBody.AddForce(Vector3.up * 700f);
+        characterBody.AddForce(Vector3.up * 70f);
     }
 
     private void FlyDown()
     {
-        characterBody.AddForce((Vector3.down * 500f));
+        characterBody.AddForce((Vector3.down * 50f));
     }
 
     private bool IsTouchingFloor()

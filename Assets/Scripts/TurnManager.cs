@@ -41,6 +41,7 @@ public class TurnManager : MonoBehaviour
             {
                 turnDelay = 0;
                 waitingForNextTurn = false;
+                StartCoroutine(WaitTurn());
                 ChangeTurn();
                 
             }
@@ -84,6 +85,11 @@ public class TurnManager : MonoBehaviour
         }
 
         
-        //gm.ChangeTurn();
+        
+    }
+
+    static IEnumerator WaitTurn()
+    {
+        yield return new WaitForSeconds(10);
     }
 }

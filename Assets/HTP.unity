@@ -568,10 +568,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'The Wizard got drunk and the Dragons decided to play. Shoot at each other
-    and collect some of the Wizards potions to get power ups. Beware of the time
+    and collect some of the Wizards potions to get power ups. Dragons are not accurate,
+    watch your aim. Beware of the time.
 
-    Be
-    quick. Be decisive. Be Dragon'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -598,13 +598,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.2
-  m_fontSizeBase: 36.2
+  m_fontSize: 29.1
+  m_fontSizeBase: 29.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -4941,6 +4941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 642317785}
   - component: {fileID: 642317786}
+  - component: {fileID: 642317787}
   m_Layer: 0
   m_Name: Turn Manager
   m_TagString: Untagged
@@ -4979,6 +4980,18 @@ MonoBehaviour:
   playerTwo: {fileID: 994551449}
   timeBetweenTurns: 1
   timerGO: {fileID: 512222453}
+--- !u!114 &642317787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642317783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ef08590b2179543a1fdc0c09ae549e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695760972
 GameObject:
   m_ObjectHideFlags: 0
@@ -17057,20 +17070,20 @@ MonoBehaviour:
 
     Q and E to Rotate
 
-    Left Click to Shoot
+    F to Shoot
 
-    Space
-    to "Fly"
+    Space to "Fly"
 
-    Ctrl to Fly lower
+    Ctrl
+    to Fly lower
 
 
     Red Potion = Health bonus
 
-    Blue Potion
-    = Power bonus
+    Blue Potion = Power bonus
 
-    Yellow Potion = Time bonus
+    Yellow
+    Potion = Time bonus
 
 '
   m_isRightToLeft: 0

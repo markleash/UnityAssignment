@@ -9,7 +9,7 @@ public class Animations : MonoBehaviour
     [SerializeField] private Timer timer;
     void Update()
     {
-        bool isShooting = Input.GetKeyDown(KeyCode.V); 
+        bool isShooting = Input.GetKeyDown(KeyCode.F); 
         if (isShooting)
         {
             animator.SetTrigger("AttackTrigger");

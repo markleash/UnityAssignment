@@ -20,7 +20,7 @@ public class CharacterWeapon : MonoBehaviour
 
     //  newWeaponPosition.transform.rotation = shootingStartPosition.transform.rotation;
     
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             bool IsPlayerTurn = playerTurn.IsPlayerTurn();
             if (IsPlayerTurn)
